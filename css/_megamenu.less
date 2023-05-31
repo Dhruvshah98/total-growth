@@ -1,6 +1,8 @@
 /* header */
 :root {
   --menuWidth: 300px;
+  --header-height: 110px;
+  --header-scroll-height: 70px;
 }
 
 #header {
@@ -29,68 +31,6 @@
   }
 }
 
-.drop {
-  position: relative;
-
-  & > a:after {
-    content: "";
-    margin-left: 10px;
-    width: 20px;
-    height: 20px;
-    background: url(../img/menu-drop.svg) no-repeat center center/contain;
-    display: inline-block;
-    vertical-align: middle;
-    transition: 0.3s;
-  }
-
-  ul {
-    position: absolute;
-    background: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.11);
-    border-radius: 10px;
-    top: 40px;
-    padding: 10px;
-    left: 50%;
-    width: 270px;
-    margin-left: -150px;
-    opacity: 0;
-    visibility: hidden;
-    .anim();
-
-    li {
-      padding: 0;
-
-      &:last-of-type {
-        border-bottom: 0;
-      }
-
-      a {
-        display: block;
-        font-size: 14px;
-        padding: 8px 15px;
-        border-radius: 5px;
-
-        &:hover {
-          background: #eee;
-          color: #000;
-        }
-      }
-    }
-  }
-
-  &:hover {
-    ul {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    & > a:after {
-      transform: rotate(180deg);
-      transition: 0.3s;
-    }
-  }
-}
-
 .header-wrap {
   display: flex;
 }
@@ -107,15 +47,30 @@
 
 .header-list {
   .flex(flex-start, center);
-
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 70px;
+  padding: 6px;
+  gap: 48px;
   li {
-    padding: 7px 24px;
-
     a {
-      font-size: 18px;
-      color: var(--dark);
-      font-weight: 500;
-
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      text-align: center;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #ffffff;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 28px;
+      &.active {
+        color: #000000;
+        background: #a0ecb1;
+        border-radius: 48px;
+      }
       &:hover {
         color: var(--secClr);
       }
@@ -179,7 +134,8 @@
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s,
+    -webkit-transform 0.3s;
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
   right: 0;
@@ -275,7 +231,8 @@
   width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  box-shadow: 0 0 5px 0.2px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 5px 0.2px
+    rgba(255, 255, 255, 0.3);
   background-color: #333;
 }
 
@@ -297,11 +254,15 @@
   background-color: transparent;
 }
 
-.mob-navigation .nav-toggle.back-visible .nav-back {
+.mob-navigation
+  .nav-toggle.back-visible
+  .nav-back {
   opacity: 1;
 }
 
-.mob-navigation .nav-toggle.back-visible .nav-title {
+.mob-navigation
+  .nav-toggle.back-visible
+  .nav-title {
   -webkit-transform: translateX(30px);
   transform: translateX(30px);
 }
@@ -315,7 +276,8 @@
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s,
+    -webkit-transform 0.3s;
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -347,7 +309,8 @@
   border: 2px solid currentcolor;
   border-right-color: transparent;
   border-bottom-color: transparent;
-  -webkit-transform: translate(-50%, -50%) rotateZ(-45deg);
+  -webkit-transform: translate(-50%, -50%)
+    rotateZ(-45deg);
   transform: translate(-50%, -50%) rotateZ(-45deg);
 }
 
@@ -366,7 +329,8 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0);
   color: rgba(255, 255, 255, 1);
   text-decoration: none;
-  -webkit-transition: color 0.15s, background-color 0.15s;
+  -webkit-transition: color 0.15s,
+    background-color 0.15s;
   transition: color 0.15s, background-color 0.15s;
   font-size: 16px;
 }
@@ -382,7 +346,8 @@
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s,
+    -webkit-transform 0.3s;
   background-color: #333;
   position: absolute;
   left: 0;
@@ -413,12 +378,14 @@
   border: 1px solid currentcolor;
   border-left-color: transparent;
   border-top-color: transparent;
-  -webkit-transform: translateY(-90%) rotateZ(-45deg);
+  -webkit-transform: translateY(-90%)
+    rotateZ(-45deg);
   transform: translateY(-90%) rotateZ(-45deg);
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s,
+    -webkit-transform 0.3s;
   -webkit-transform-origin: 100%;
   transform-origin: 100%;
 }
