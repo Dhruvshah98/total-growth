@@ -178,10 +178,10 @@
   content: "";
   position: absolute;
   display: block;
-  width: 22px;
+  width: 18px;
   height: 2px;
-  background: #000;
-  left: 0;
+  background: #ffffff;
+  right: 0;
   top: 50%;
   margin-top: -7px;
   -webkit-transition: all 0.3s 0.3s;
@@ -190,7 +190,8 @@
 
 .js-nav-toggle span:before {
   // box-shadow: 0 14px 0 1px #fff;
-  margin-top: 5px;
+  margin-top: 2px;
+  width: 14px;
 }
 
 .show-menu {
@@ -398,9 +399,15 @@
     align-items: center;
     justify-content: center;
   }
+
+  .menuBtn {
+    .button {
+      display: none;
+    }
+  }
 }
 @media all and (max-width: 480px) {
   .logo {
-    width: 90px;
+    width: 116px;
   }
 }
