@@ -1,0 +1,80 @@
+.plan-box {
+  color: #fff;
+  text-align: center;
+  padding: 64px;
+  h3 {
+    font-size: 40px;
+    margin-bottom: 28px;
+  }
+  p {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    opacity: 0.4;
+    margin-bottom: 64px;
+    min-height: 56px;
+  }
+  ul {
+    li {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 28px;
+      text-align: left;
+      margin-bottom: 36px;
+      display: flex;
+      align-items: center;
+      color: rgba(255, 255, 255, 0.4);
+      &::before {
+        content: url(../img/check.svg);
+        margin-right: 12px;
+      }
+    }
+  }
+}
+
+.book-call {
+  width: 100%;
+  margin-top: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 0;
+}
+
+.popular {
+  border-radius: 24px;
+  border: 1px solid #fff;
+  position: relative;
+  ul {
+    li {
+      &::before {
+        content: url(../img/pur-check.svg);
+      }
+    }
+  }
+
+  .book-call {
+    background: #8f98ff;
+  }
+}
+
+.popular-tag {
+  width: max-content;
+  background: #ffffff;
+  border-radius: 48px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: absolute;
+  color: #000;
+  padding: 14px 24px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.footer-box {
+  overflow: hidden;
+}
