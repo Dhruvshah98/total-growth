@@ -13,6 +13,61 @@ var testiSwiper = new Swiper(".testiSwiper", {
 
 // Testimonial swiper ends
 
+
+// step section starts
+
+// Section enters
+let tlStepEnter = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".step-sec",
+        start: "15% 45%",
+        end: "15% 20%",
+        // toggleActions: "play pause resume reset",
+        scrub: 1,
+        // markers: true
+    }
+});
+
+tlStepEnter.from(".step1", {
+    x: "-40%",
+    opacity: 0,
+}, 0)
+tlStepEnter.from(".step2", {
+    y: "100%",
+    opacity: 0,
+}, 0)
+tlStepEnter.from(".step3", {
+    x: "40%",
+    opacity: 0,
+}, 0)
+
+
+// Section exits
+let tlStepExit = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".step-sec",
+        start: "100% 65%",
+        end: "100% 50%",
+        // toggleActions: "play pause resume reset",
+        scrub: 1,
+        // markers: true
+    }
+});
+
+tlStepExit.to(".step1", {
+    x: "-40%",
+    opacity: 0,
+}, 0)
+tlStepExit.to(".step2", {
+    y: "100%",
+    opacity: 0,
+}, 0)
+tlStepExit.to(".step3", {
+    x: "40%",
+    opacity: 0,
+}, 0)
+// step section ends
+
 /*Counter Script*/
 var a = 0;
 $(window).scroll(function () {
