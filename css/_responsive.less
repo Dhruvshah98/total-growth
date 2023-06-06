@@ -226,6 +226,24 @@
   .step-info {
     font-size: 24px;
   }
+
+  .flip-wrap {
+    gap: 14px;
+    overflow-x: scroll;
+    white-space: nowrap;
+
+    &::-webkit-scrollbar {
+      height: 0px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  }
 }
 
 @media all and (max-width: 990px) {
@@ -325,19 +343,47 @@
     width: fit-content;
   }
 
-  .flip-wrap {
-    // gap: 14px;
-    // overflow-x: scroll;
-
-    // &::-webkit-scrollbar {
-    //   display: none;
-    // }
+  .flip-box {
+    height: 312px;
+    width: 300px;
   }
 
-  // .flip-box {
-  //   height: 312px;
-  //   width: 300px;
-  // }
+  .count-wrap {
+    flex-wrap: wrap;
+    gap: 60px 20px;
+  }
+
+  .count-box {
+    max-width: 46%;
+  }
+
+  .testi-nav-wrap {
+    position: relative;
+  }
+
+  .testi-swiper {
+    .swiper-wrapper {
+      margin-bottom: 64px;
+    }
+  }
+
+  .acc-item {
+    padding: 45px 32px;
+    gap: 26px;
+  }
+
+  .faq-btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .acc-gradient.active .faq-btn {
+    top: -8px;
+  }
+
+  .acc-gradient.active .faq-hdn {
+    margin-bottom: 28px;
+  }
 }
 
 @media all and (max-width: 768px) {
@@ -394,6 +440,10 @@
   .position-gradient {
     border-radius: 20px;
   }
+
+  .testi-box .content-tag {
+    margin-bottom: 48px;
+  }
 }
 
 @media all and (max-width: 640px) {
@@ -411,6 +461,15 @@
 
   .vision-info .content-tag {
     margin-bottom: 74px;
+  }
+
+  .faq-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .faq-sec .content-tag {
+    margin-bottom: 32px;
   }
 }
 
@@ -478,6 +537,47 @@
 
   :root {
     --input-fs-top: 12px;
+  }
+
+  .banner-head p {
+    font-size: 16px;
+    margin: 34px auto 66px;
+  }
+
+  .testi-box p {
+    font-size: 30px;
+  }
+
+  .count-text span {
+    font-size: 30px;
+  }
+
+  .flip-hdn {
+    font-size: 26px;
+  }
+
+  .flip-back p {
+    font-size: 18px;
+  }
+
+  .faq-hdn {
+    font-size: 16px;
+  }
+
+  .faq-detail p {
+    font-size: 16px;
+  }
+
+  .acc-item {
+    gap: 16px;
+  }
+
+  .acc-gradient.active .faq-btn {
+    top: -3px;
+  }
+
+  .acc-container {
+    margin-bottom: 34px;
   }
 }
 
