@@ -23,8 +23,8 @@ mm.add("(min-width: 991px)", () => {
     let tlStepEnter = gsap.timeline({
         scrollTrigger: {
             trigger: ".step-sec",
-            start: "15% 45%",
-            end: "15% 20%",
+            start: "15% 80%",
+            end: "15% 0%",
             // toggleActions: "play pause resume reset",
             scrub: 1,
             // markers: true
@@ -32,16 +32,21 @@ mm.add("(min-width: 991px)", () => {
     });
 
     tlStepEnter.from(".step1", {
-        x: "-40%",
+        x: -500,
+        y: -500,
         opacity: 0,
+        rotate: -120,
     }, 0)
     tlStepEnter.from(".step2", {
         y: "100%",
         opacity: 0,
+        rotate: 10,
     }, 0)
     tlStepEnter.from(".step3", {
-        x: "40%",
+        rotate: 180,
         opacity: 0,
+        x: 500,
+        y: 500,
     }, 0)
 
 
@@ -50,7 +55,7 @@ mm.add("(min-width: 991px)", () => {
         scrollTrigger: {
             trigger: ".step-sec",
             start: "100% 65%",
-            end: "100% 50%",
+            end: "100% 20%",
             // toggleActions: "play pause resume reset",
             scrub: 1,
             // markers: true
@@ -58,15 +63,15 @@ mm.add("(min-width: 991px)", () => {
     });
 
     tlStepExit.to(".step1", {
-        x: "-40%",
+        x: -500,
         opacity: 0,
     }, 0)
     tlStepExit.to(".step2", {
-        y: "100%",
+        y: "-100%",
         opacity: 0,
     }, 0)
     tlStepExit.to(".step3", {
-        x: "40%",
+        x: 500,
         opacity: 0,
     }, 0)
 });
