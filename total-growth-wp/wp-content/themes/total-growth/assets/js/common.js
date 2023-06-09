@@ -37,6 +37,25 @@ $('#header').load('header.html', function () {
             item.classList.add("dr-icon");
         }
     });
+
+
+    // const btns = document.querySelectorAll(".button");
+    // console.log(btns);
+    // btns.forEach((btn) => {
+    //     btn.addEventListener("mousemove", function (e) {
+    //         const position = btn.getBoundingClientRect();
+    //         const x = e.pageX - position.left - position.width / 2;
+    //         const y = e.pageY - position.top - position.height / 2;
+    //         btn.style.transform =
+    //             "translate(" + x * 0.3 + "px, " + y * 0.5 + "px)";
+    //     });
+    // });
+
+    // btns.forEach((btn) => {
+    //     btn.addEventListener("mouseout", function (e) {
+    //         btn.style.transform = "translate(0px, 0px)";
+    //     });
+    // });
 });
 
 $('#footer').load('footer.html');
@@ -89,110 +108,67 @@ $(document).on('click', '.view-pass', function () {
 /* // Password View */
 
 
+$(document).ready(function () {
+    var magnets = document.querySelectorAll('.button')
+    var strength = 50
+
+    magnets.forEach((magnet) => {
+        magnet.addEventListener('mousemove', moveMagnet);
+        magnet.addEventListener('mouseout', function (event) {
+            TweenMax.to(event.currentTarget, 1, { x: 0, y: 0, ease: Power4.easeOut })
+        });
+    });
+
+    function moveMagnet(event) {
+        var magnetButton = event.currentTarget
+        var bounding = magnetButton.getBoundingClientRect()
+
+        //console.log(magnetButton, bounding)
+
+        gsap.to(magnetButton, 1, {
+            x: (((event.clientX - bounding.left) / magnetButton.offsetWidth) - 0.5) * strength,
+            y: (((event.clientY - bounding.top) / magnetButton.offsetHeight) - 0.5) * strength,
+            ease: Power4.easeOut
+        })
+
+        //magnetButton.style.transform = 'translate(' + (((( event.clientX - bounding.left)/(magnetButton.offsetWidth))) - 0.5) * strength + 'px,'+ (((( event.clientY - bounding.top)/(magnetButton.offsetHeight))) - 0.5) * strength + 'px)';
+    }
 
 
-//  if ($('.enquireComponent').length > 0) {
-//      $.getScript("./js/jquery.validate.min.js", function () {
+    var magnets = document.querySelectorAll('.people-img')
+    var strength = 50
 
+    magnets.forEach((magnet) => {
+        magnet.addEventListener('mousemove', moveMagnet);
+        magnet.addEventListener('mouseout', function (event) {
+            TweenMax.to(event.currentTarget, 1, { x: 0, y: 0, ease: Power4.easeOut })
+        });
+    });
 
+    function moveMagnet(event) {
+        var magnetButton = event.currentTarget
+        var bounding = magnetButton.getBoundingClientRect()
 
-// var bannedDomains = ["0-mail.com", "027168.com"];
+        //console.log(magnetButton, bounding)
 
-// $.validator.addMethod('domainNotBanned', function (value, elem, param) {
-//     var domain = value.split('@')[1];
-//     return bannedDomains.indexOf(domain) < 0;
-// }, 'Emails from this domain are not allowed.');
+        gsap.to(magnetButton, 1, {
+            x: (((event.clientX - bounding.left) / magnetButton.offsetWidth) - 0.5) * strength,
+            y: (((event.clientY - bounding.top) / magnetButton.offsetHeight) - 0.5) * strength,
+            ease: Power4.easeOut
+        })
 
-//          $.validator.addMethod("laxEmail", function (value, element) {
-//              return this.optional(element) || /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(value);
-//          }, 'Please enter a valid email address.');
-//          var ruleLists = {
-//              'name': {
-//                  required: true,
-//                  minlength: 2,
-//              },
-//              'mob_no': {
-//                  required: true,
-//                  /* minlength: 10, maxlength: 10, */
-//              },
-//              'email': {
-//                  required: true,
-//                  laxEmail: true,
-// domainNotBanned: true,
-//              },
-//          };
-//          var messageList = {
-//              'name': {
-//                  required: "Your Name is required",
-//                  minlength: "Name must be at least 2 characters",
-//              },
-//              'mob_no': {
-//                  required: "Mobile Number is required",
-//                  /* minlength: "Mobile Number must be at least 10 characters", maxlength: "Mobile Number must be 10 characters", */
-//              },
-//              'email': {
-//                  required: "Email Address is required",
-//                  laxEmail: "Please enter a valid email address.",
-//              },
-//          };
-
-//          function sendForm(t) {
-//              var name = $("#res-name").val();
-//              var email = $("#email").val();
-//              var mobile = $("#mobile").val();
-//              var whatsappin = $("#purchase_confirmation").val();
-//              $('.f-btn').html('Loading...');
-//              $.ajax({
-//                  url: 'selldo_response.php',
-//                  type: "POST",
-//                  data: {
-//                      'name': name,
-//                      'email': email,
-//                      'mobile': mobile,
-//                      'whatsappin': whatsappin
-//                  },
-//                  success: function (result) {
-//                      if (result == 'Success') {
-//                          window.location.href = 'thankyou.html';
-//                      } else {
-//                          console.log('eEror');
-//                      }
-//                  },
-//                  error: function (xhr, resp, text) {
-//                      console.log(xhr, resp, text);
-//                  }
-//              }); /* console.log($(t).serialize()); */
-//          }
-//          var validateObj = {
-//              rules: ruleLists,
-//              messages: messageList,
-//              submitHandler: function (form) {
-//                  sendForm(form);
-//              }
-//          };
-//          $('.enquireComponent').load('content.php .enquireComponentIn', function () {
-//              $("#enquiryForm").attr("autocomplete", "off");
-//              $("#enquiryForm").validate(validateObj);
-//              $.getScript("./js/intlTelInput.js", function () {
-//                  var input = document.querySelector("#mobile");
-//                  var iti = window.intlTelInput(input, {
-//                      separateDialCode: true,
-//                      preferredCountries: ['in'],
-//                      utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.3/build/js/utils.js",
-//                  });
-//                  window.iti = iti;
-//              });
-//          });
-//      });
-//  }
+        //magnetButton.style.transform = 'translate(' + (((( event.clientX - bounding.left)/(magnetButton.offsetWidth))) - 0.5) * strength + 'px,'+ (((( event.clientY - bounding.top)/(magnetButton.offsetHeight))) - 0.5) * strength + 'px)';
+    }
 
 
 
-// if ($('.lazy').length > 0) {
-//     $('.lazy').Lazy({
-//         effect: 'fadeIn',
-//         visibleOnly: true,
-//     });
-// }
-// window.scrollTo(0, 0);
-// $('window').scrollTop(0);
+    gsap.to(".text-gradient", {
+        backgroundSize: "100%",
+        duration: 1,
+        ease: "power2.inOut()"
+    })
+
+
+
+
+});
