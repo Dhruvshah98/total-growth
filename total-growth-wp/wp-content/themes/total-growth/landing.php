@@ -198,7 +198,10 @@ get_header();
     <!-- benefits starts -->
     <section class="comm-section benefits-sec">
       <div class="container">
-        <div class="content-tag red center">benefits</div>
+        <div class="content-tag red center"><h3 class="comm-sec-hdn">
+          Content that gets you
+          <span class="text-gradient yellow">noticed</span>
+        </h3></div>
 
         <h3 class="comm-sec-hdn">
           Content that gets you
@@ -292,15 +295,15 @@ get_header();
           <div class="f-row f-3">
             <div class="f-col">
               <div class="plan-box">
-                <h3>Standard</h3>
-                <p>Best for brands
-                  and creators starting out</p>
-                <ul>
-                  <li>20 videos per month</li>
-                  <li>Community Management</li>
-                  <li>Thumbnails & CTAs</li>
-                  <li>24x7 Slack Support</li>
-                </ul>
+                    <h3>Standard</h3>
+                    <p>Best for brands
+                      and creators starting out</p>
+                    <ul>
+                      <li>20 videos per month</li>
+                      <li>Community Management</li>
+                      <li>Thumbnails & CTAs</li>
+                      <li>24x7 Slack Support</li>
+                    </ul>
                 <a href="" class="button book-call">Book a call</a>
               </div>
             </div>
@@ -411,34 +414,7 @@ get_header();
         <!-- faq accordion Starts -->
         <div class="faq-wrap">
           <div class="acc-container">
-            <?php if( have_rows('faq') ): ?>
-    <?php while( have_rows('faq') ): the_row();   ?>
-        
-             <div class="acc-gradient">
-              <div class="acc-item">
-                <div class="faq-btn">
-                  <div class="faq-btn-img">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/faq-btn-img.svg" alt="click here" width="100%" height="100%" loading="lazy" />
-                  </div>
-                </div>
-                <div class="acc-info">
-                  <h4 class="faq-hdn">
-                   <?php the_sub_field('question'); ?>
-                  </h4>
-                  <div class="faq-detail">
-                    <p>
-                      <?php the_sub_field('answer'); ?>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <p></p>
-        
-    <?php endwhile; ?>
-    <
-<?php endif; ?>
-            <!-- <div class="acc-gradient">
+            <div class="acc-gradient">
               <div class="acc-item">
                 <div class="faq-btn">
                   <div class="faq-btn-img">
@@ -528,7 +504,7 @@ get_header();
                   </div>
                 </div>
               </div>
-            </div> -->
+            </div>
           </div>
 
           <a href="#" class="button center">Book a call</a>
