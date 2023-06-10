@@ -198,7 +198,10 @@ get_header();
     <!-- benefits starts -->
     <section class="comm-section benefits-sec">
       <div class="container">
-        <div class="content-tag red center">benefits</div>
+        <div class="content-tag red center"><h3 class="comm-sec-hdn">
+          Content that gets you
+          <span class="text-gradient yellow">noticed</span>
+        </h3></div>
 
         <h3 class="comm-sec-hdn">
           Content that gets you
@@ -292,15 +295,15 @@ get_header();
           <div class="f-row f-3">
             <div class="f-col">
               <div class="plan-box">
-                <h3>Standard</h3>
-                <p>Best for brands
-                  and creators starting out</p>
-                <ul>
-                  <li>20 videos per month</li>
-                  <li>Community Management</li>
-                  <li>Thumbnails & CTAs</li>
-                  <li>24x7 Slack Support</li>
-                </ul>
+                    <h3>Standard</h3>
+                    <p>Best for brands
+                      and creators starting out</p>
+                    <ul>
+                      <li>20 videos per month</li>
+                      <li>Community Management</li>
+                      <li>Thumbnails & CTAs</li>
+                      <li>24x7 Slack Support</li>
+                    </ul>
                 <a href="" class="button book-call">Book a call</a>
               </div>
             </div>
@@ -411,6 +414,8 @@ get_header();
         <!-- faq accordion Starts -->
         <div class="faq-wrap">
           <div class="acc-container">
+
+            <div class="acc-gradient">
             <?php if( have_rows('faq') ): ?>
               <?php while( have_rows('faq') ): the_row();   ?>
         
@@ -438,102 +443,7 @@ get_header();
     <?php endwhile; ?>
     <
 <?php endif; ?>
-            <!-- <div class="acc-gradient">
-              <div class="acc-item">
-                <div class="faq-btn">
-                  <div class="faq-btn-img">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/faq-btn-img.svg" alt="click here" width="100%" height="100%" loading="lazy" />
-                  </div>
-                </div>
-                <div class="acc-info">
-                  <h4 class="faq-hdn">
-                    How do I communicate changes in my videos?
-                  </h4>
-                  <div class="faq-detail">
-                    <p>
-                      Simple changes are typically captured in writing. If
-                      bigger changes are needed, you can request time with a
-                      Project Lead or send feedback through Slack. We also
-                      encourage you to interact with the Frame.io videos we
-                      share with you.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="acc-gradient">
-              <div class="acc-item">
-                <div class="faq-btn">
-                  <div class="faq-btn-img">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/faq-btn-img.svg" alt="click here" width="100%" height="100%" loading="lazy" />
-                  </div>
-                </div>
-                <div class="acc-info">
-                  <h4 class="faq-hdn">
-                    What do I need to give you to get you started?
-                  </h4>
-                  <div class="faq-detail">
-                    <p>
-                      Once you pay for your subscription you’ll receive
-                      onboarding information from your dedicated account
-                      manager. We will then work with you to articulate your
-                      requests for our team to start working on.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="acc-gradient">
-              <div class="acc-item">
-                <div class="faq-btn">
-                  <div class="faq-btn-img">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/faq-btn-img.svg" alt="click here" width="100%" height="100%" loading="lazy" />
-                  </div>
-                </div>
-                <div class="acc-info">
-                  <h4 class="faq-hdn">How do I share my work with you?</h4>
-                  <div class="faq-detail">
-                    <p>
-                      We create a new project for each client. A kanban board
-                      is always accessible to you as an active contributor. We
-                      update the board accordingly when work is delivered to
-                      you upon completion. When a request is completed, we
-                      will create a Frame.io video for your review.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="acc-gradient">
-              <div class="acc-item">
-                <div class="faq-btn">
-                  <div class="faq-btn-img">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/faq-btn-img.svg" alt="click here" width="100%" height="100%" loading="lazy" />
-                  </div>
-                </div>
-                <div class="acc-info">
-                  <h4 class="faq-hdn">When does my editing team work?</h4>
-                  <div class="faq-detail">
-                    <p>
-                      Our team is all international. Most work while you sleep
-                      – from your Sunday night to Friday morning. You’ll get
-                      the best results if you have any content briefs
-                      submitted in Slack by the end of your day. Your team
-                      will wake up and work while you sleep, delivering videos
-                      when you start the day.If you have time-sensitive
-                      projects you can arrange an hour or two of overlap with
-                      your team for quick synchronous revisions. Otherwise
-                      we’re big fans of asynchronous work.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-          </div>
-
-          <a href="#" class="button center">Book a call</a>
-        </div>
-        <!-- faq accordion Ends -->
+           
       </div>
     </section>
     <!-- frequently asked ends -->
