@@ -411,7 +411,34 @@ get_header();
         <!-- faq accordion Starts -->
         <div class="faq-wrap">
           <div class="acc-container">
-            <div class="acc-gradient">
+            <?php if( have_rows('faq') ): ?>
+    <?php while( have_rows('faq') ): the_row();   ?>
+        
+             <div class="acc-gradient">
+              <div class="acc-item">
+                <div class="faq-btn">
+                  <div class="faq-btn-img">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/img/faq-btn-img.svg" alt="click here" width="100%" height="100%" loading="lazy" />
+                  </div>
+                </div>
+                <div class="acc-info">
+                  <h4 class="faq-hdn">
+                   <?php the_sub_field('question'); ?>
+                  </h4>
+                  <div class="faq-detail">
+                    <p>
+                      <?php the_sub_field('answer'); ?>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p></p>
+        
+    <?php endwhile; ?>
+    <
+<?php endif; ?>
+            <!-- <div class="acc-gradient">
               <div class="acc-item">
                 <div class="faq-btn">
                   <div class="faq-btn-img">
@@ -501,7 +528,7 @@ get_header();
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
 
           <a href="#" class="button center">Book a call</a>
