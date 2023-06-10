@@ -412,7 +412,7 @@ get_header();
         <div class="faq-wrap">
           <div class="acc-container">
             <?php if( have_rows('faq') ): ?>
-    <?php while( have_rows('faq') ): the_row();   ?>
+              <?php while( have_rows('faq') ): the_row();   ?>
         
              <div class="acc-gradient">
               <div class="acc-item">
