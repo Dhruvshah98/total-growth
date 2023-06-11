@@ -28,15 +28,15 @@
   <div class="container">
     <div class="head-left">
       <div class="logoBox">
-        <a class="logo" href="./index.html">
+        <a class="logo" href="<?php echo get_site_url().'/'; ?>">
           <img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" alt="Logo" />
         </a>
       </div>
     </div>
     <ul class="header-list">
       <li><a href="./index.html" class="active">Home</a></li>
-      <li><a href="./about.html">about us</a></li>
-      <li><a href="./hiring.html">hiring</a></li>
+      <li><a href="<?php echo get_site_url().'/about/'; ?>">about us</a></li>
+      <li><a href="<?php echo get_site_url().'/hiring/'; ?>">hiring</a></li>
     </ul>
     <div class="head-right">
       <div class="menuBtn">
