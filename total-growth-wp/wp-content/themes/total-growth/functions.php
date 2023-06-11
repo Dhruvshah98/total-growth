@@ -31,7 +31,9 @@ function blankslate_enqueue() {
 // wp_enqueue_style( 'blankslate-style', get_stylesheet_uri() );
 
 wp_enqueue_style('aos-css','https://unpkg.com/aos@2.3.1/dist/aos.css',false,'1.1','all' );
-wp_enqueue_style('swiper-bundle-css','https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css',false,'1.1','all' );
+// wp_enqueue_style('swiper-bundle-css','https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css',false,'1.1','all' );
+wp_enqueue_style('swiper-bundle-css','https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css',false,'1.1','all' );
+
 wp_enqueue_style('main-css', get_template_directory_uri() . '/assets/css/main.css',false,'1.1','all' );
 wp_enqueue_script( 'jquery' );
 }
@@ -45,11 +47,16 @@ function blankslate_footer() {
 
     // GSAP Animtion 
     wp_enqueue_script( 'gsap-js', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js', array (), 1.1, true);
-    wp_enqueue_script( 'gsap-js', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js', array (), 1.1, true);
+
     wp_enqueue_script( 'ScrollTrigger-js',  'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js', array (), 1.1, true);
+
     wp_enqueue_script( 'aos-js', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array (), 1.1, true);
-    wp_enqueue_script( 'swiper-bundle-js', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', array (), 1.1, true);
- wp_enqueue_script( 'megamenu',  get_template_directory_uri() . '/assets/js/megamenu.js', array (), 1.1, true);
+
+    wp_enqueue_script( 'swiper-bundle-js', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js', array (), 1.1, true);
+    // wp_enqueue_script( 'swiper-bundle-js', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', array (), 1.1, true);
+
+
+    wp_enqueue_script( 'megamenu',  get_template_directory_uri() . '/assets/js/megamenu.js', array (), 1.1, true);
 
      if(is_page_template('hirings.php')){
 		wp_enqueue_script( 'hire',  get_template_directory_uri() . '/assets/js/hire.js', array (), 1.1, true);
