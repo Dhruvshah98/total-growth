@@ -26,18 +26,16 @@ get_header();
 ?>
 <!-- Main Container Starts -->
   <div class="main-container">
+     <?php
+                $banner_section_data = get_field('banner_section');
+                if( $banner_section_data ): ?>
     <!-- Banner Txt Starts -->
     <div class="comm-section pt0">
       <div class="banner-head">
-        <h1>
-          Unlock your <span class="text-gradient blue">growth,</span>
-          <br />
-          <span class="text-gradient red">your way.</span>
-        </h1>
+        <?php echo $banner_section_data['title']; ?>
 
         <p>
-          Fast-Track Your Social Media Growth With World-Class Editing &
-          Animations From Our Worldwide Team of Rockstars
+          <?php echo $banner_section_data['sub_title']; ?>
         </p>
 
         <div class="button center">book a call</div>
@@ -50,7 +48,24 @@ get_header();
       <div class="container">
         <div class="people-wrap">
           <div class="f-row f-3">
+            <?php $i = 1;
+              if( have_rows('banner_section') ): while ( have_rows('banner_section') ) : the_row(); 
+                if( have_rows('images_cards') ): while ( have_rows('images_cards') ) : the_row();       ?>
             <div class="f-col">
+              <div class="people-box">
+                <a href="">
+                  <div class="people-img">
+                    <img src="<?php  echo get_sub_field('image'); ?>" alt="">
+                  </div>
+                </a>
+                <h3><?php  echo get_sub_field('name'); ?></h3>
+                <h5><?php  echo get_sub_field('number'); ?></h5>
+              </div>
+            </div>
+            <?php $i++; endwhile; endif;
+                            endwhile; endif;  
+                            ?>
+            <!-- <div class="f-col">
               <div class="people-box">
                 <a href="">
                   <div class="people-img">
@@ -71,40 +86,37 @@ get_header();
                 <h3>ANDREW KIRBY</h3>
                 <h5>645k+</h5>
               </div>
-            </div>
-            <div class="f-col">
-              <div class="people-box">
-                <a href="">
-                  <div class="people-img">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/people-1.png" alt="">
-                  </div>
-                </a>
-                <h3>ANDREW KIRBY</h3>
-                <h5>645k+</h5>
-              </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
     </div>
-
+<?php endif; ?>
     <!-- our 3-step process starts -->
+    <?php
+                $process_data = get_field('process');
+                if( $process_data ): ?>
     <section class="comm-section step-sec">
       <div class="container">
-        <div class="content-tag violet center">our 3-step process</div>
-        <h4 class="comm-sec-hdn">
-          The Winning Recipe for Social Media Content That
-          <span class="text-gradient yellow">Delivers Results</span>
-        </h4>
+        <div class="content-tag violet center"><?php echo $process_data['title']; ?></div>
+        <?php echo $process_data['sub_title']; ?>
 
         <div class="step-wrap">
-          <div class="step-box step1">
+              <?php $i = 1;
+              if( have_rows('process') ): while ( have_rows('process') ) : the_row(); 
+                if( have_rows('process_cards') ): while ( have_rows('process_cards') ) : the_row();       ?>
+          <div class="step-box step<?php echo $i?>">
             <div class="step-img">
-              <img src="<?php bloginfo('template_url'); ?>/assets/img/step-1.png" alt="Curation & Ideation" width="100%" height="100%" loading="lazy" />
+              <img src="<?php  echo get_sub_field('icon'); ?>" alt="Curation & Ideation" width="100%" height="100%" loading="lazy" />
             </div>
-            <h4 class="step-info">Curation & Ideation</h4>
+            <h4 class="step-info"><?php  echo get_sub_field('title'); ?></h4>
           </div>
-          <div class="step-box step2">
+          <?php $i++; endwhile; endif;
+                            endwhile; endif;  
+                            ?>
+
+
+          <!-- <div class="step-box step2">
             <div class="step-img">
               <img src="<?php bloginfo('template_url'); ?>/assets/img/step-2.png" alt="Editing & Animating" width="100%" height="100%" loading="lazy" />
             </div>
@@ -115,10 +127,11 @@ get_header();
               <img src="<?php bloginfo('template_url'); ?>/assets/img/step-3.png" alt="Posting & Management" width="100%" height="100%" loading="lazy" />
             </div>
             <h4 class="step-info">Posting & Management</h4>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
+    <?php endif; ?>
     <!-- our 3-step process ends -->
 
     <!-- Testimonial starts -->
@@ -126,24 +139,30 @@ get_header();
       <div class="container">
         <div class="swiper testiSwiper testi-swiper">
           <div class="swiper-wrapper">
+            <?php if( have_rows('testimonial') ): ?>
+              <?php while( have_rows('testimonial') ): the_row();   ?>
             <div class="swiper-slide">
+              <div class="testi-box">
+                <div class="content-tag green"><?php the_sub_field('name'); ?></div>
+                <p><?php the_sub_field('comment'); ?></p>
+              </div>
+            </div>
+          <?php endwhile; ?>
+      <?php endif; ?>
+            <!-- <div class="swiper-slide">
               <div class="testi-box">
                 <div class="content-tag green">Iman gadzhi</div>
                 <p>“Great Work.”</p>
               </div>
             </div>
+
             <div class="swiper-slide">
               <div class="testi-box">
                 <div class="content-tag green">Iman gadzhi</div>
                 <p>“Great Work.”</p>
               </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="testi-box">
-                <div class="content-tag green">Iman gadzhi</div>
-                <p>“Great Work.”</p>
-              </div>
-            </div>
+            </div> -->
+
           </div>
           <div class="testi-nav-wrap">
             <div class="testi-swiper-prev">
@@ -158,18 +177,24 @@ get_header();
     </section>
     <!-- Testimonial ends -->
 
-    <!-- Counter starts -->
+     <!-- Counter starts -->
     <div class="comm-section counter-sec">
       <div class="container">
         <div class="count-wrap">
+              <?php if( have_rows('statistics') ): ?>
+              <?php while( have_rows('statistics') ): the_row();   ?>
+        
           <div class="count-box">
             <h4 class="count-text">
-              <span class="counter-value" data-count="6700">0</span>
-              <span>+</span>
+              <span class="counter-value" data-count="<?php the_sub_field('number'); ?>">0</span>
+              <span><?php the_sub_field('unit'); ?></span>
             </h4>
-            <p>Videos Created</p>
+            <p><?php the_sub_field('title'); ?></p>
           </div>
-          <div class="count-box">
+            <?php endwhile; ?>
+        <?php endif; ?>
+
+          <!-- <div class="count-box">
             <h4 class="count-text">
               <span class="counter-value" data-count="1.3">0</span>
               <span>Bn+</span>
@@ -189,48 +214,51 @@ get_header();
               <span>M Hrs+</span>
             </h4>
             <p>Total Watchtime</p>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
     <!-- Counter ends -->
 
     <!-- benefits starts -->
+    <?php
+        $benefits_data = get_field('benefits');
+        if( $benefits_data ): ?>
     <section class="comm-section benefits-sec">
       <div class="container">
-        <div class="content-tag red center"><h3 class="comm-sec-hdn">
-          Content that gets you
-          <span class="text-gradient yellow">noticed</span>
-        </h3></div>
+        <div class="content-tag red center"><?php echo $benefits_data['small_text']; ?></div>
 
-        <h3 class="comm-sec-hdn">
-          Content that gets you
-          <span class="text-gradient yellow">noticed</span>
-        </h3>
+        <?php echo $benefits_data['title']; ?>
 
         <div class="flip-wrap">
-          <div class="flip-box">
-            <div class="flip-front">
-              <h3 class="flip-hdn">Attention is currency</h3>
-              <div class="flip-img">
-                <img src="<?php bloginfo('template_url'); ?>/assets/img/flip1.png" alt="Attention is currency" width="100%" height="100%" loading="lazy" />
-              </div>
-              <div class="plus-icon">
-                <img src="<?php bloginfo('template_url'); ?>/assets/img/plus-icon.svg" alt="click to flip" width="100%" height="100%" loading="lazy" />
-              </div>
-            </div>
-            <div class="flip-back">
-              <h3 class="flip-hdn">Get more attention</h3>
-              <p>
-                In a world where Attention is the New Oil, we’ll make you
-                rich.
-              </p>
-              <div class="back-icon">
-                <img src="<?php bloginfo('template_url'); ?>/assets/img/back-icon.svg" alt="click to flip" width="100%" height="100%" loading="lazy" />
-              </div>
-            </div>
-          </div>
-          <div class="flip-box">
+          <?php $i = 1;
+              if( have_rows('benefits') ): while ( have_rows('benefits') ) : the_row(); 
+              if( have_rows('benefits_cards') ): while ( have_rows('benefits_cards') ) : the_row();       ?>
+                <div class="flip-box">
+                  <div class="flip-front">
+                    <h3 class="flip-hdn"><?php the_sub_field('front_title'); ?></h3>
+                    <div class="flip-img">
+                      <img src="<?php the_sub_field('front_icon'); ?>" alt="Attention is currency" width="100%" height="100%" loading="lazy" />
+                    </div>
+                    <div class="plus-icon">
+                      <img src="<?php bloginfo('template_url'); ?>/assets/img/plus-icon.svg" alt="click to flip" width="100%" height="100%" loading="lazy" />
+                    </div>
+                  </div>
+                  <div class="flip-back">
+                    <h3 class="flip-hdn"><?php the_sub_field('back_title'); ?></h3>
+                    <p>
+                      <?php the_sub_field('back_sub_title'); ?>
+                    </p>
+                    <div class="back-icon">
+                      <img src="<?php bloginfo('template_url'); ?>/assets/img/back-icon.svg" alt="click to flip" width="100%" height="100%" loading="lazy" />
+                    </div>
+                  </div>
+                </div>
+
+              <?php $i++; 
+              endwhile; endif;
+                  endwhile; endif; ?>
+          <!-- <div class="flip-box">
             <div class="flip-front">
               <h3 class="flip-hdn">Multiply your content</h3>
               <div class="flip-img">
@@ -274,13 +302,17 @@ get_header();
                 <img src="<?php bloginfo('template_url'); ?>/assets/img/back-icon.svg" alt="click to flip" width="100%" height="100%" loading="lazy" />
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
+    <?php endif; ?>
     <!-- benefits ends -->
 
     <!-- Plans Starts -->
+    <?php
+        $our_offers_data = get_field('our_offers');
+        if( $our_offers_data ): ?>
     <div class="comm-section step-sec">
       <div class="container">
         <div class="plan-head">
@@ -293,9 +325,15 @@ get_header();
         </div>
         <div class="plan-wrap">
           <div class="f-row f-3">
+            <?php $i = 1;
+              if( have_rows('our_offers') ): while ( have_rows('our_offers') ) : the_row(); 
+              if( have_rows('plans_cards') ): while ( have_rows('plans_cards') ) : the_row();       ?>
             <div class="f-col">
-              <div class="plan-box">
-                    <h3>Standard</h3>
+              <div class="plan-box <?php if($i == 2): ?>popular<?php  endif;?>">
+                <?php if($i == 2): ?>
+                <span class="popular-tag">most popular</span>
+                <?php  endif;?>
+                    <!-- <h3>Standard</h3>
                     <p>Best for brands
                       and creators starting out</p>
                     <ul>
@@ -303,10 +341,15 @@ get_header();
                       <li>Community Management</li>
                       <li>Thumbnails & CTAs</li>
                       <li>24x7 Slack Support</li>
-                    </ul>
-                <a href="" class="button book-call">Book a call</a>
+                    </ul> -->
+                    <?php  echo get_sub_field('plans'); ?>
+                <a href="<?php  echo get_sub_field('cta'); ?>" class="button book-call">Book a call</a>
               </div>
             </div>
+            <?php $i++; endwhile; endif;
+                  endwhile; endif;
+                            ?>
+<!-- 
             <div class="f-col">
               <div class="plan-box popular">
                 <span class="popular-tag">most popular</span>
@@ -334,11 +377,12 @@ get_header();
                 </ul>
                 <a href="" class="button book-call">Book a call</a>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
     </div>
+    <?php endif; ?>
     <!-- Plans Ends -->
 
 
@@ -346,24 +390,29 @@ get_header();
     <div class="comm-section">
       <div class="content-tag yellow center">videos</div>
       <div class="reels-wrap">
-        <div class="mob-frame mob-frame-1">
+
+         <?php $i = 1; if( have_rows('videos') ): ?>
+              <?php while( have_rows('videos') ): the_row();   ?>
+        <div class="mob-frame mob-frame-<?php echo $i ?>">
           <div class="mob-video">
             <video muted playsinline autoplay>
-              <source src="./video/mob-video-1.mp4" type="video/mp4">
+              <source src="<?php bloginfo('template_url'); ?>/assets/video/mob-video-1.mp4" type="video/mp4">
             </video>
           </div>
           <div class="mob-bottom">
             <div class="mob-bottom-name">
               <img src="<?php bloginfo('template_url'); ?>/assets/img/bottom-img.svg" alt="">
-              <p>cHESTER ZODA</p>
+              <p><?php  echo get_sub_field('name'); ?></p>
             </div>
             <div class="mob-bottom-likes">
-              <p>105k</p>
+              <p><?php  echo get_sub_field('number'); ?></p>
               <img src="<?php bloginfo('template_url'); ?>/assets/img/acc-icon.svg" alt="">
             </div>
           </div>
         </div>
-        <div class="mob-frame mob-frame-2">
+    <?php $i++; endwhile; ?>
+<?php endif; ?> 
+        <!-- <div class="mob-frame mob-frame-2">
           <div class="mob-video">
             <video muted playsinline autoplay>
               <source src="./video/mob-video-1.mp4" type="video/mp4">
@@ -396,16 +445,16 @@ get_header();
               <img src="<?php bloginfo('template_url'); ?>/assets/img/acc-icon.svg" alt="">
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <!-- reels ends -->
 
     <!-- frequently asked starts -->
+     <!-- <?php if($i == 1): ?> active<?php endif;?> -->
     <section class="comm-section faq-sec">
       <div class="container">
         <div class="content-tag red center">frequently asked</div>
-
         <h3 class="comm-sec-hdn">
           Your questions,
           <span class="text-gradient green">answered</span>
@@ -414,11 +463,9 @@ get_header();
         <!-- faq accordion Starts -->
         <div class="faq-wrap">
           <div class="acc-container">
-
             <div class="acc-gradient">
-            <?php if( have_rows('faq') ): ?>
+            <?php $i = 1; if( have_rows('faq') ): ?>
               <?php while( have_rows('faq') ): the_row();   ?>
-        
              <div class="acc-gradient">
               <div class="acc-item">
                 <div class="faq-btn">
@@ -438,11 +485,8 @@ get_header();
                 </div>
               </div>
             </div>
-            <p></p>
-        
-    <?php endwhile; ?>
-    <
-<?php endif; ?>
+            <?php $i++; endwhile; ?>
+        <?php endif; ?>
            
       </div>
     </section>

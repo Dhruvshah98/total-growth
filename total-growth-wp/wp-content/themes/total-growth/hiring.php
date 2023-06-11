@@ -28,13 +28,17 @@ get_header();
 <!-- Main Container Starts -->
     <div class="main-container">
       <!-- Banner Txt Starts -->
+      <?php $banner_section_data = get_field('banner_section');
+        if( $banner_section_data ): ?>
       <div class="comm-section pt0">
         <div class="banner-head">
-          <h1>
+          <!-- <h1>
             Join a team of <span class="text-gradient blue">passionate</span>
             <br />
             <span class="text-gradient yellow">video</span> editors.
-          </h1>
+          </h1> -->
+          <?php echo $banner_section_data['main_title']; ?>
+
         </div>
       </div>
       <!-- Banner Txt Ends -->
@@ -44,18 +48,23 @@ get_header();
         <div class="container">
           <div class="hire-box-wrap">
             <div class="f-row f-3 f-990-1">
+              <?php $i = 1;
+              if( have_rows('banner_section') ): while ( have_rows('banner_section') ) : the_row(); 
+                if( have_rows('banner_cards') ): while ( have_rows('banner_cards') ) : the_row();       ?>
               <div class="f-col">
                 <div class="hire-box">
-                  <div class="content-tag yellow">screen</div>
+                  <div class="content-tag <?php if($i == 1): ?>yellow<?php endif;?><?php if($i == 2): ?>violet<?php endif?> <?php if($i == 3): ?>green<?php endif?>"><?php  echo get_sub_field('title'); ?></div>
                   <div class="comm-para">
                     <p>
-                      Editors must have a portfolio that WOWs us. Only the top
-                      5% of animators pass.
+                      <?php  echo get_sub_field('sub_title'); ?>
                     </p>
                   </div>
                 </div>
               </div>
-              <div class="f-col">
+              <?php $i++; endwhile; endif;
+                            endwhile; endif;  
+                            ?>
+              <!-- <div class="f-col">
                 <div class="hire-box">
                   <div class="content-tag violet">test</div>
                   <div class="comm-para">
@@ -73,11 +82,12 @@ get_header();
                     <p>Editors train on our viral clips for 6 months</p>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
       </section>
+      <?php endif; ?>
       <!-- Hireing detail ends-->
 
       <!-- Open positions Starts -->
@@ -89,95 +99,46 @@ get_header();
 
           <!-- position accordian starts -->
           <div class="position-acc-container">
+            <?php $queryObject = new  Wp_Query(array(
+              'posts_per_page'   => '-1',
+              'post_type'        => 'jobs',
+              'post_status'      => 'publish',
+            )); 
+
+            ?>
+            <?php
+            $cnt = 0;
+            if ($queryObject->have_posts()) {
+            while ($queryObject->have_posts()) : $queryObject->the_post();
+                $title = get_the_title();
+            ?>
             <div class="position-gradient">
               <div class="position-acc-box">
                 <div class="position-info">
                   <div>
-                    <span class="content-tag white">0 to 2 years</span>
-                    <h3 class="acc-hdn">Senior Video Editor</h3>
+                    <span class="content-tag white"><?php echo get_field('experiance') ?></span>
+                    <h3 class="acc-hdn"><?php the_title() ?></h3>
                   </div>
                   <div class="detail-btn">view details</div>
                 </div>
                 <div class="position-detail">
                   <div class="position-detail-left">
-                    <p>
-                      Only 2% of our editors get accepted. That’s lesser than
-                      Stanford Uni acceptance rates.
-                    </p>
-                    <ul>
-                      <li>Need to have the Hardworking Character Trait</li>
-                      <li>
-                        Expert in Premiere/FinalCut/DaVince + AfterEffects
-                      </li>
-                      <li>Doesn’t play video games</li>
-                      <li>Should be fun to work with</li>
-                    </ul>
+                    <?php echo get_field('content') ?>
                   </div>
                   <div class="position-application">
                     <form action="">
-                      <div class="form-grp">
-                        <p class="form-label">Name</p>
-                        <input
-                          class="form-field"
-                          type="text"
-                          id="full-name"
-                          name="full-name"
-                          required
-                          placeholder="Enter your name"
-                        />
-                      </div>
-                      <div class="form-grp">
-                        <p class="form-label">contact number</p>
-                        <input
-                          class="form-field"
-                          type="number"
-                          id="phone-no"
-                          name="phone-no"
-                          required
-                          placeholder="Enter your number"
-                        />
-                      </div>
-                      <div class="form-grp">
-                        <p class="form-label">email</p>
-                        <input
-                          class="form-field"
-                          type="email"
-                          id="email"
-                          name="email"
-                          required
-                          placeholder="Enter your email"
-                        />
-                      </div>
-                      <div class="form-grp">
-                        <p class="form-label">cover letter</p>
-                        <input
-                          class="form-field"
-                          type="text"
-                          id="cover-letter"
-                          name="cover-letter"
-                          required
-                          placeholder="Enter your cover letter"
-                        />
-                      </div>
-                      <div class="form-grp">
-                        <p class="form-label">resume</p>
-                        <input
-                          class="form-field"
-                          type="text"
-                          id="full-name"
-                          name="full-name"
-                          required
-                          placeholder="Upload resume here"
-                        />
-                      </div>
-
-                      <button class="submit-btn">submit application</button>
+                      <?php echo do_shortcode('[contact-form-7 id="135" title="Contact form 1"]')?>
                     </form>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="position-gradient">
+
+            <?php  $cnt++;
+            endwhile;   }
+           wp_reset_query();  // Restore global post data stomped by the_post().
+                            ?>   
+            <!-- <div class="position-gradient">
               <div class="position-acc-box">
                 <div class="position-info">
                   <div>
@@ -442,7 +403,7 @@ get_header();
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
           <!-- position accordian ends -->
         </div>
