@@ -162,11 +162,26 @@ $(document).ready(function () {
 
 
 
-    gsap.to(".text-gradient", {
-        backgroundSize: "100%",
-        duration: 1,
-        ease: "power2.inOut()"
-    })
+    var textAnim = document.querySelectorAll(".text-gradient")
+
+
+    textAnim.forEach(section => {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: section,
+                start: "0% 65%",
+                end: "0% 65%",
+                toggleActions: "play none none reverse",
+                // scrub: 1,
+                // markers: true
+            }
+        }).to(section, {
+            backgroundSize: "100%",
+            backgroundPosition: "0% 0%",
+            duration: 1.5,
+            ease: "back.out(1.2)"
+        })
+    });
 
 
 

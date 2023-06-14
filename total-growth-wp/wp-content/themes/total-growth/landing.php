@@ -153,19 +153,6 @@ get_header();
                     </div>
                     <?php endwhile; ?>
                     <?php endif; ?>
-                    <!-- <div class="swiper-slide">
-              <div class="testi-box">
-                <div class="content-tag green">Iman gadzhi</div>
-                <p>“Great Work.”</p>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testi-box">
-                <div class="content-tag green">Iman gadzhi</div>
-                <p>“Great Work.”</p>
-              </div>
-            </div> -->
 
                 </div>
                 <div class="testi-nav-wrap">
@@ -199,28 +186,6 @@ get_header();
                 </div>
                 <?php endwhile; ?>
                 <?php endif; ?>
-
-                <!-- <div class="count-box">
-            <h4 class="count-text">
-              <span class="counter-value" data-count="1.3">0</span>
-              <span>Bn+</span>
-            </h4>
-            <p>Views</p>
-          </div>
-          <div class="count-box">
-            <h4 class="count-text">
-              <span class="counter-value" data-count="2.75">0</span>
-              <span>M+</span>
-            </h4>
-            <p>Revenue Generated</p>
-          </div>
-          <div class="count-box">
-            <h4 class="count-text">
-              <span class="counter-value" data-count="1">0</span>
-              <span>M Hrs+</span>
-            </h4>
-            <p>Total Watchtime</p>
-          </div> -->
             </div>
         </div>
     </div>

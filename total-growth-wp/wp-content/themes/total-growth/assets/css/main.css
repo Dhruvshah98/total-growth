@@ -3389,26 +3389,23 @@ body {
   padding-left: 10px;
   display: inline-block;
   line-height: 0.9;
-  padding-bottom: 16px;
+  padding-bottom: 1%;
   background-repeat: no-repeat !important;
   background-size: 0 100%;
   transform-origin: left center;
+  background-position: 100% 0%;
 }
 .text-gradient.yellow {
-  background: linear-gradient(90deg, rgba(250, 223, 124, 0.3) 0%, rgba(250, 223, 124, 0) 92.71%);
-  border-left: 4px solid #fadf7c;
+  background-image: linear-gradient(90deg, #fadf7c 1%, rgba(250, 223, 124, 0.3) 1% 2%, rgba(250, 223, 124, 0) 92.71%);
 }
 .text-gradient.blue {
-  background: linear-gradient(90deg, rgba(105, 114, 222, 0.4) -2.96%, rgba(105, 114, 222, 0) 97.04%);
-  border-left: 4px solid #8f98ff;
+  background-image: linear-gradient(90deg, #8f98ff 1%, rgba(105, 114, 222, 0.4) 1% -2.96%, rgba(105, 114, 222, 0) 97.04%);
 }
 .text-gradient.red {
-  background: linear-gradient(90deg, rgba(240, 146, 126, 0.4) 0%, rgba(240, 146, 126, 0) 92.71%);
-  border-left: 4px solid #f0927e;
+  background-image: linear-gradient(90deg, #f0927e 1%, rgba(240, 146, 126, 0.4) 1% 2%, rgba(240, 146, 126, 0) 92.71%);
 }
 .text-gradient.green {
-  background: linear-gradient(90deg, rgba(160, 236, 177, 0.3) 0%, rgba(160, 236, 177, 0) 92.71%);
-  border-left: 4px solid #a0ecb1;
+  background-image: linear-gradient(90deg, #a0ecb1 1%, rgba(160, 236, 177, 0.3) 1% 2%, rgba(160, 236, 177, 0) 92.71%);
 }
 .vision-wrap {
   display: flex;
@@ -4327,30 +4324,6 @@ body {
 .mob-navigation li.nav-dropdown-open > ul {
   display: block;
 }
-@media all and (max-width: 990px) {
-  .navigation {
-    display: none;
-  }
-  .nav-wrapper {
-    display: block;
-  }
-  .header-list {
-    display: none;
-  }
-  .menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .menuBtn .button {
-    display: none;
-  }
-}
-@media all and (max-width: 480px) {
-  .logo {
-    width: 116px;
-  }
-}
 @media all and (max-width: 1440px) {
   .banner-head {
     padding: 100px 15px 0;
@@ -4482,6 +4455,17 @@ body {
   }
   .acc-item {
     padding: 50px;
+  }
+  .plan-box {
+    color: #fff;
+    text-align: center;
+    padding: 40px;
+  }
+  .plan-box p {
+    margin-bottom: 36px;
+  }
+  .plan-box ul li {
+    margin-bottom: 30px;
   }
 }
 @media all and (max-width: 1200px) {

@@ -80,45 +80,46 @@ body {
   padding-left: 10px;
   display: inline-block;
   line-height: 0.9;
-  padding-bottom: 16px;
+  padding-bottom: 1%;
   // transition: 0.5s;
   background-repeat: no-repeat !important;
   background-size: 0 100%;
   transform-origin: left center;
+  background-position: 100% 0%;
   &.yellow {
-    background: linear-gradient(
+    background-image: linear-gradient(
       90deg,
-      rgba(250, 223, 124, 0.3) 0%,
+      #fadf7c 1%,
+      rgba(250, 223, 124, 0.3) 1% 2%,
       rgba(250, 223, 124, 0) 92.71%
     );
-    border-left: 4px solid #fadf7c;
   }
 
   &.blue {
-    background: linear-gradient(
+    background-image: linear-gradient(
       90deg,
-      rgba(105, 114, 222, 0.4) -2.96%,
+      #8f98ff 1%,
+      rgba(105, 114, 222, 0.4) 1% -2.96%,
       rgba(105, 114, 222, 0) 97.04%
     );
-    border-left: 4px solid #8f98ff;
   }
 
   &.red {
-    background: linear-gradient(
+    background-image: linear-gradient(
       90deg,
-      rgba(240, 146, 126, 0.4) 0%,
+      #f0927e 1%,
+      rgba(240, 146, 126, 0.4) 1% 2%,
       rgba(240, 146, 126, 0) 92.71%
     );
-    border-left: 4px solid #f0927e;
   }
 
   &.green {
-    background: linear-gradient(
+    background-image: linear-gradient(
       90deg,
-      rgba(160, 236, 177, 0.3) 0%,
+      #a0ecb1 1%,
+      rgba(160, 236, 177, 0.3) 1% 2%,
       rgba(160, 236, 177, 0) 92.71%
     );
-    border-left: 4px solid #a0ecb1;
   }
 }
 
