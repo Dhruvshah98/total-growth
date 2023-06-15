@@ -32,6 +32,32 @@ get_header();
     <!-- Banner Txt Starts -->
     <div class="comm-section pt0">
         <div class="banner-head">
+            <div class="banner-elem-wrap">
+                <div class="elem elem-1">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/img/elem-1.svg" alt="">
+                </div>
+                <div class="elem elem-2">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/img/elem-2.svg" alt="">
+                </div>
+                <div class="elem elem-3">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/img/elem-3.svg" alt="">
+                </div>
+                <div class="elem elem-4">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/img/elem-4.svg" alt="">
+                </div>
+                <div class="elem elem-5">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/img/elem-5.svg" alt="">
+                </div>
+                <div class="elem elem-6">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/img/elem-3.svg" alt="">
+                </div>
+                <div class="elem elem-7">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/img/elem-3.svg" alt="">
+                </div>
+                <div class="elem elem-8">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/img/elem-4.svg" alt="">
+                </div>
+            </div>
             <?php echo $banner_section_data['title']; ?>
 
             <p>
@@ -65,28 +91,6 @@ get_header();
                     <?php $i++; endwhile; endif;
                             endwhile; endif;  
                             ?>
-                    <!-- <div class="f-col">
-              <div class="people-box">
-                <a href="">
-                  <div class="people-img">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/people-1.png" alt="">
-                  </div>
-                </a>
-                <h3>ANDREW KIRBY</h3>
-                <h5>645k+</h5>
-              </div>
-            </div>
-            <div class="f-col">
-              <div class="people-box">
-                <a href="">
-                  <div class="people-img">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/people-1.png" alt="">
-                  </div>
-                </a>
-                <h3>ANDREW KIRBY</h3>
-                <h5>645k+</h5>
-              </div>
-            </div> -->
                 </div>
             </div>
         </div>
@@ -107,31 +111,15 @@ get_header();
                 if( have_rows('process_cards') ): while ( have_rows('process_cards') ) : the_row();       ?>
                 <div class="step-box step<?php echo $i?>">
                     <div class="step-img">
-                        <!-- <img src="<?php  echo get_sub_field('icon'); ?>" alt="Curation & Ideation" width="100%"
-                            height="100%" loading="lazy" /> -->
-                        <video muted playsinline autoplay loop>
+                        <!-- <video muted playsinline autoplay loop>
                             <source src="<?php  echo get_sub_field('icon_anim'); ?>">
-                        </video>
+                        </video> -->
                     </div>
                     <h4 class="step-info"><?php  echo get_sub_field('title'); ?></h4>
                 </div>
                 <?php $i++; endwhile; endif;
                             endwhile; endif;  
                             ?>
-
-
-                <!-- <div class="step-box step2">
-            <div class="step-img">
-              <img src="<?php bloginfo('template_url'); ?>/assets/img/step-2.png" alt="Editing & Animating" width="100%" height="100%" loading="lazy" />
-            </div>
-            <h4 class="step-info">Editing & Animating</h4>
-          </div>
-          <div class="step-box step3">
-            <div class="step-img">
-              <img src="<?php bloginfo('template_url'); ?>/assets/img/step-3.png" alt="Posting & Management" width="100%" height="100%" loading="lazy" />
-            </div>
-            <h4 class="step-info">Posting & Management</h4>
-          </div> -->
             </div>
         </div>
     </section>
