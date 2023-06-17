@@ -4417,11 +4417,18 @@ body {
 @media all and (max-width: 1366px) {
   .banner-head {
     padding: 50px 15px 0;
-    max-width: 1000px;
+    max-width: 1280px;
     margin: 0 auto;
   }
   .banner-head h1 {
     font-size: 56px;
+  }
+  .elem-5,
+  .elem-4,
+  .elem-8,
+  .elem-1,
+  .elem-2 {
+    scale: 0.7;
   }
   .comm-section {
     padding: 60px 0;
@@ -4708,6 +4715,20 @@ body {
   .acc-gradient.active .faq-hdn {
     margin-bottom: 28px;
   }
+  .elem-2 {
+    right: 0;
+  }
+  .elem-1 {
+    left: 0;
+    top: 65%;
+  }
+  .elem-5,
+  .elem-4,
+  .elem-8,
+  .elem-1,
+  .elem-2 {
+    scale: 0.6;
+  }
 }
 @media all and (max-width: 768px) {
   .container {
@@ -4854,6 +4875,11 @@ body {
   }
   .acc-container {
     margin-bottom: 34px;
+  }
+}
+@media all and (max-width: 480px) {
+  .acc-item {
+    padding: 32px 22px;
   }
 }
 /*# sourceMappingURL=main.css.map */

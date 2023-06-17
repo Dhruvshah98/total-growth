@@ -111,9 +111,9 @@ get_header();
                 if( have_rows('process_cards') ): while ( have_rows('process_cards') ) : the_row();       ?>
                 <div class="step-box step<?php echo $i?>">
                     <div class="step-img">
-                        <!-- <video muted playsinline autoplay loop>
+                        <video muted playsinline autoplay loop>
                             <source src="<?php  echo get_sub_field('icon_anim'); ?>">
-                        </video> -->
+                        </video>
                     </div>
                     <h4 class="step-info"><?php  echo get_sub_field('title'); ?></h4>
                 </div>
@@ -357,7 +357,7 @@ get_header();
             <?php while( have_rows('videos') ): the_row();   ?>
             <div class="mob-frame mob-frame-<?php echo $i ?>">
                 <div class="mob-video">
-                    <video muted playsinline autoplay>
+                    <video muted playsinline autoplay loop>
                         <source src=" <?php  echo get_sub_field('video_file'); ?>">
                     </video>
                 </div>
