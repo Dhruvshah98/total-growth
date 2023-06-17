@@ -286,7 +286,7 @@ get_header();
                 </h4>
             </div>
             <div class="plan-wrap">
-                <div class="f-row f-3">
+                <div class="f-row f-3 f-990-1">
                     <?php $i = 1;
               if( have_rows('our_offers') ): while ( have_rows('our_offers') ) : the_row(); 
               if( have_rows('plans_cards') ): while ( have_rows('plans_cards') ) : the_row();       ?>
@@ -295,15 +295,6 @@ get_header();
                             <?php if($i == 2): ?>
                             <span class="popular-tag">most popular</span>
                             <?php  endif;?>
-                            <!-- <h3>Standard</h3>
-                    <p>Best for brands
-                      and creators starting out</p>
-                    <ul>
-                      <li>20 videos per month</li>
-                      <li>Community Management</li>
-                      <li>Thumbnails & CTAs</li>
-                      <li>24x7 Slack Support</li>
-                    </ul> -->
                             <?php  echo get_sub_field('plans'); ?>
                             <a href="<?php  echo get_sub_field('cta'); ?>" class="button book-call">Book a call</a>
                         </div>
