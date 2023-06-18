@@ -340,7 +340,7 @@ get_header();
 
 
     <!-- reels Starts -->
-    <div class="comm-section">
+    <div class="comm-section reels-section">
         <div class="content-tag yellow center">videos</div>
         <div class="reels-wrap">
 
