@@ -58,7 +58,7 @@ function blankslate_footer() {
 
     wp_enqueue_script( 'megamenu',  get_template_directory_uri() . '/assets/js/megamenu.js', array (), 1.1, true);
 
-     if(is_page_template('hirings.php')){
+     if(is_page_template('hiring.php')){
 		wp_enqueue_script( 'hire',  get_template_directory_uri() . '/assets/js/hire.js', array (), 1.1, true);
 	}
 
@@ -70,30 +70,26 @@ function blankslate_footer() {
 ?>
 <script>
 jQuery(document).ready(function($) {
-var deviceAgent = navigator.userAgent.toLowerCase();
-if (deviceAgent.match(/(iphone|ipod|ipad)/)) {
-$("html").addClass("ios");
-$("html").addClass("mobile");
-}
-if (deviceAgent.match(/(Android)/)) {
-$("html").addClass("android");
-$("html").addClass("mobile");
-}
-if (navigator.userAgent.search("MSIE") >= 0) {
-$("html").addClass("ie");
-}
-else if (navigator.userAgent.search("Chrome") >= 0) {
-$("html").addClass("chrome");
-}
-else if (navigator.userAgent.search("Firefox") >= 0) {
-$("html").addClass("firefox");
-}
-else if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
-$("html").addClass("safari");
-}
-else if (navigator.userAgent.search("Opera") >= 0) {
-$("html").addClass("opera");
-}
+    var deviceAgent = navigator.userAgent.toLowerCase();
+    if (deviceAgent.match(/(iphone|ipod|ipad)/)) {
+        $("html").addClass("ios");
+        $("html").addClass("mobile");
+    }
+    if (deviceAgent.match(/(Android)/)) {
+        $("html").addClass("android");
+        $("html").addClass("mobile");
+    }
+    if (navigator.userAgent.search("MSIE") >= 0) {
+        $("html").addClass("ie");
+    } else if (navigator.userAgent.search("Chrome") >= 0) {
+        $("html").addClass("chrome");
+    } else if (navigator.userAgent.search("Firefox") >= 0) {
+        $("html").addClass("firefox");
+    } else if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+        $("html").addClass("safari");
+    } else if (navigator.userAgent.search("Opera") >= 0) {
+        $("html").addClass("opera");
+    }
 });
 </script>
 <?php
@@ -184,7 +180,8 @@ wp_enqueue_script( 'comment-reply' );
 }
 function blankslate_custom_pings( $comment ) {
 ?>
-<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo esc_url( comment_author_link() ); ?></li>
+<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo esc_url( comment_author_link() ); ?>
+</li>
 <?php
 }
 add_filter( 'get_comments_number', 'blankslate_comment_count', 0 );
