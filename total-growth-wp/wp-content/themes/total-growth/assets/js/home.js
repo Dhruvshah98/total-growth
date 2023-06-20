@@ -77,6 +77,23 @@ mm.add("(min-width: 991px)", () => {
 });
 // step section ends
 
+$(document).ready(function () {
+    $("video").prop('muted', true);
+
+    $("video").click(function () {
+        $(this).prop('muted', !$(this).prop('muted'));
+        $(this).parent().find(".mute").toggle();
+        $(this).parent().find(".unmute").toggle();
+    });
+
+    $(".speakers").click(function () {
+        $(this).parent().find("video").prop('muted', !$(this).parent().find("video").prop('muted'));
+        $(this).find(".mute").toggle();
+        $(this).find(".unmute").toggle();
+    });
+});
+
+
 /*Counter Script*/
 var a = 0;
 $(window).scroll(function () {
@@ -109,11 +126,11 @@ $(window).scroll(function () {
 /*Counter Script ends*/
 
 // banefit flip card
-$(document).on("click", ".flip-front", function () {
+$(document).on("mouseenter", ".flip-front", function () {
     $(this).parent().addClass("active");
 });
 
-$(document).on("click", ".flip-back", function () {
+$(document).on("mouseleave", ".flip-back", function () {
     $(this).parent().removeClass("active");
 });
 // banefit flip card (we will edit this.)

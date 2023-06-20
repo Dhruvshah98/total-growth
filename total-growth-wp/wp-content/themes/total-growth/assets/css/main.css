@@ -3327,6 +3327,25 @@ body {
 .mob-frame-3 {
   transform: rotate(6deg);
 }
+.mob-video {
+  position: relative;
+}
+.speakers {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.unmute {
+  display: none;
+}
 html,
 body {
   width: 100%;

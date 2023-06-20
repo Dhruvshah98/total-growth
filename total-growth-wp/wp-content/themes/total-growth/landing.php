@@ -348,9 +348,17 @@ get_header();
             <?php while( have_rows('videos') ): the_row();   ?>
             <div class="mob-frame mob-frame-<?php echo $i ?>">
                 <div class="mob-video">
-                    <video muted playsinline autoplay loop>
+                    <video muted playsinline autoplay loop id="video">
                         <source src=" <?php  echo get_sub_field('video_file'); ?>">
                     </video>
+                    <div class="speakers">
+                        <div class="mute">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/img/speaker-slash.svg" alt="">
+                        </div>
+                        <div class="unmute">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/img/speaker-high.svg" alt="">
+                        </div>
+                    </div>
                 </div>
                 <div class="mob-bottom">
                     <div class="mob-bottom-name">
