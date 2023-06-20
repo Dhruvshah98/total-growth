@@ -4,7 +4,10 @@
 var testiSwiper = new Swiper(".testiSwiper", {
     slidesPerView: 1,
     spaceBetween: 10,
-    speed: 800,
+    speed: 1800,
+    autoplay: {
+        delay: 2000
+    },
     navigation: {
         nextEl: ".testi-swiper-next",
         prevEl: ".testi-swiper-prev",
