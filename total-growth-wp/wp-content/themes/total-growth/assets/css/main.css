@@ -3694,7 +3694,7 @@ body {
 }
 .step-img {
   width: 228px;
-  height: 228px;
+  height: 220px;
   margin: 0 auto 77px;
 }
 .step-img img,
@@ -4096,7 +4096,10 @@ body {
 .logo {
   display: inline-block;
   vertical-align: middle;
-  width: 130px;
+  width: 180px;
+}
+.logo img {
+  width: 100%;
 }
 .header-box .container {
   display: -webkit-flex;
