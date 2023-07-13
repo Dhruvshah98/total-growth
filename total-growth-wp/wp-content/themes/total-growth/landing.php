@@ -79,7 +79,7 @@ get_header();
                 if( have_rows('images_cards') ): while ( have_rows('images_cards') ) : the_row();       ?>
                     <div class="f-col">
                         <div class="people-box">
-                            <a href="">
+                            <a href="<?php  echo get_sub_field('social_media_link'); ?>">
                                 <div class="people-img">
                                     <img src="<?php  echo get_sub_field('image'); ?>" alt="">
                                 </div>

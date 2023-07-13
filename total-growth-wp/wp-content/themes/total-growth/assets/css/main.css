@@ -2587,38 +2587,28 @@ label.error {
   position: relative;
   z-index: 1;
 }
-[tooltip-title]:is(
-    [data-placement="top"]
-  )::before {
+[tooltip-title]:is([data-placement="top"])::before {
   bottom: 100%;
   left: 0%;
   margin-bottom: 16px;
 }
-[tooltip-title]:is(
-    [data-placement="right"]
-  )::before {
+[tooltip-title]:is([data-placement="right"])::before {
   bottom: -10%;
   left: 100%;
   margin-left: 16px;
 }
-[tooltip-title]:is(
-    [data-placement="bottom"]
-  )::before {
+[tooltip-title]:is([data-placement="bottom"])::before {
   top: 100%;
   left: 0%;
   margin-top: 16px;
 }
-[tooltip-title]:is(
-    [data-placement="left"]
-  )::before {
+[tooltip-title]:is([data-placement="left"])::before {
   bottom: -10%;
   right: 100%;
   margin-right: 16px;
 }
 /* Arrow */
-[tooltip-title]:is(
-    [data-placement="top"]
-  )::after {
+[tooltip-title]:is([data-placement="top"])::after {
   bottom: 100%;
   left: 20%;
   margin-bottom: 8px;
@@ -2630,9 +2620,7 @@ label.error {
   border-right: 10px solid transparent;
   border-top: 10px solid #222;
 }
-[tooltip-title]:is(
-    [data-placement="right"]
-  )::after {
+[tooltip-title]:is([data-placement="right"])::after {
   bottom: 20%;
   left: 100%;
   margin-left: 8px;
@@ -2644,9 +2632,7 @@ label.error {
   border-bottom: 10px solid transparent;
   border-right: 10px solid #222;
 }
-[tooltip-title]:is(
-    [data-placement="bottom"]
-  )::after {
+[tooltip-title]:is([data-placement="bottom"])::after {
   left: 20%;
   top: 100%;
   display: inline-block;
@@ -2658,9 +2644,7 @@ label.error {
   border-right: 10px solid transparent;
   border-bottom: 10px solid #222;
 }
-[tooltip-title]:is(
-    [data-placement="left"]
-  )::after {
+[tooltip-title]:is([data-placement="left"])::after {
   bottom: 20%;
   right: 100%;
   display: inline-block;
@@ -2974,7 +2958,7 @@ label.error {
   display: -ms-flexbox;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 24px;
   margin-bottom: 96px;
 }
@@ -2994,6 +2978,8 @@ label.error {
   width: 46%;
   transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
 }
 .footer-links a:hover {
   color: #8f98ff;
@@ -3791,6 +3777,7 @@ body {
 .flip-wrap {
   display: flex;
   gap: 40px;
+  padding: 20px 0;
 }
 .flip-box {
   position: relative;
@@ -3829,6 +3816,7 @@ body {
   font-weight: 500;
   line-height: 1.4;
   color: #000000;
+  white-space: normal;
 }
 .flip-box.active .flip-back {
   transform: perspective(1000px) rotateY(0deg);
@@ -3841,6 +3829,7 @@ body {
   letter-spacing: -0.02em;
   color: #000000;
   margin-bottom: 48px;
+  white-space: normal;
 }
 .flip-img {
   position: absolute;
@@ -3891,7 +3880,7 @@ body {
   align-items: flex-start;
 }
 .acc-item {
-  padding: 64px;
+  padding: 48px;
   display: flex;
   align-items: center;
   gap: 36px;
@@ -3953,6 +3942,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .people-box h3 {
   font-weight: 600;
@@ -3960,6 +3950,8 @@ body {
   line-height: 17px;
   color: #ffffff;
   margin-bottom: 13px;
+  text-align: center;
+  letter-spacing: 1px;
 }
 .people-box h5 {
   font-weight: 500;
@@ -3992,6 +3984,21 @@ body {
 }
 .people-img:hover::after {
   opacity: 0.6;
+}
+.people-img::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: url(../img/youtube.svg);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+.people-img:hover::before {
+  opacity: 1;
 }
 .people-wrap {
   max-width: 634px;
@@ -4762,8 +4769,10 @@ body {
     width: fit-content;
   }
   .flip-box {
-    height: 312px;
+    height: 380px;
     width: 300px;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
   .count-wrap {
     flex-wrap: wrap;
@@ -4923,6 +4932,10 @@ body {
   .faq-sec .content-tag {
     margin-bottom: 32px;
   }
+  .elem-4,
+  .elem-5 {
+    display: none;
+  }
 }
 @media all and (max-width: 576px) {
   .team-img {
@@ -5036,6 +5049,22 @@ body {
   }
   .step-img {
     margin: 0px auto 40px;
+  }
+  .logo {
+    width: 120px;
+  }
+  .book-call {
+    margin-top: 40px;
+  }
+  .menuBtn button {
+    padding: 0 24px;
+  }
+  .plan-box ul li {
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .social-wrap h3 {
+    font-size: 16px;
   }
 }
 @media all and (max-width: 400px) {
