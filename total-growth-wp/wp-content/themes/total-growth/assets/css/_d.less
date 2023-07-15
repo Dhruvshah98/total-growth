@@ -6,10 +6,12 @@ body {
   color: #fff;
   text-align: center;
   padding: 64px;
+
   h3 {
     font-size: 40px;
     margin-bottom: 28px;
   }
+
   p {
     font-weight: 500;
     font-size: 20px;
@@ -18,6 +20,7 @@ body {
     margin-bottom: 64px;
     min-height: 56px;
   }
+
   ul {
     li {
       font-weight: 500;
@@ -28,6 +31,7 @@ body {
       display: flex;
       align-items: center;
       color: rgba(255, 255, 255, 0.4);
+
       &::before {
         content: url(../img/check.svg);
         margin-right: 12px;
@@ -47,6 +51,7 @@ body {
   border-radius: 24px;
   border: 1px solid #fff;
   position: relative;
+
   ul {
     li {
       &::before {
@@ -100,6 +105,7 @@ body {
   background: #000;
   z-index: 2;
   transition: transform 0.1s linear;
+
   &:after {
     content: "";
     position: absolute;
@@ -109,17 +115,16 @@ body {
     left: -2px;
     z-index: -2;
     border-radius: 50px;
-    background-image: linear-gradient(
-      90deg,
-      #fff,
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2),
-      #fff
-    );
+    background-image: linear-gradient(90deg,
+        #fff,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2),
+        #fff);
     // animation: name duration timing-function delay
     //   iteration-count direction fill-mode;
     animation: moveBg 5s linear infinite;
   }
+
   &:before {
     content: "";
     position: absolute;
@@ -143,11 +148,9 @@ body {
   0% {
     background-position: 0 0;
   }
-  // 50% {
-  //   background-position: px 0;
-  // }
+
   100% {
-    background-position: 380px 0;
+    background-position: 550px 0;
   }
 }
 
@@ -162,6 +165,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   &:after {
     content: url(../img/phone-buttons.svg);
     position: absolute;
@@ -169,10 +173,12 @@ body {
     top: 10%;
   }
 }
+
 .mob-video {
   height: calc(100% - 60px);
   width: 100%;
   padding-bottom: 20px;
+
   video {
     height: 100%;
     width: 100%;
@@ -190,11 +196,13 @@ body {
 .mob-bottom-name {
   display: flex;
   align-items: center;
+
   img {
     height: 32px;
     width: 32px;
     margin-right: 16px;
   }
+
   p {
     color: #fff;
     font-size: 12px;
@@ -206,9 +214,11 @@ body {
 .mob-bottom-likes {
   display: flex;
   align-items: center;
+
   p {
     color: rgba(255, 255, 255, 0.4);
   }
+
   img {
     margin-left: 16px;
   }

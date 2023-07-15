@@ -129,13 +129,25 @@ $(window).scroll(function () {
 /*Counter Script ends*/
 
 // banefit flip card
-$(document).on("mouseenter", ".flip-front", function () {
-    $(this).parent().addClass("active");
-});
 
-$(document).on("mouseleave", ".flip-back", function () {
-    $(this).parent().removeClass("active");
-});
+if ($(window).width() > 991) {
+    $(document).on("mouseenter", ".flip-front", function () {
+        $(this).parent().addClass("active");
+    });
+
+    $(document).on("mouseleave", ".flip-back", function () {
+        $(this).parent().removeClass("active");
+    });
+} else {
+    $(document).on("click", ".flip-front", function () {
+        $(this).parent().addClass("active");
+    });
+
+    $(document).on("click", ".flip-back", function () {
+        $(this).parent().removeClass("active");
+    });
+}
+
 // banefit flip card (we will edit this.)
 
 // FAQ Accordian

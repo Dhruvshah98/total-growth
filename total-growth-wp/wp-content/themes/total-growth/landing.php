@@ -362,7 +362,7 @@ get_header();
                 </div>
                 <div class="mob-bottom">
                     <div class="mob-bottom-name">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/img/bottom-img.svg" alt="">
+                        <img src="<?php  echo get_sub_field('img_user'); ?>" alt="">
                         <p><?php  echo get_sub_field('name'); ?></p>
                     </div>
                     <div class="mob-bottom-likes">
@@ -373,40 +373,6 @@ get_header();
             </div>
             <?php $i++; endwhile; ?>
             <?php endif; ?>
-            <!-- <div class="mob-frame mob-frame-2">
-          <div class="mob-video">
-            <video muted playsinline autoplay>
-              <source src="./video/mob-video-1.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="mob-bottom">
-            <div class="mob-bottom-name">
-              <img src="<?php bloginfo('template_url'); ?>/assets/img/bottom-img.svg" alt="">
-              <p>cHESTER ZODA</p>
-            </div>
-            <div class="mob-bottom-likes">
-              <p>105k</p>
-              <img src="<?php bloginfo('template_url'); ?>/assets/img/acc-icon.svg" alt="">
-            </div>
-          </div>
-        </div>
-        <div class="mob-frame mob-frame-3">
-          <div class="mob-video">
-            <video muted playsinline autoplay>
-              <source src="./video/mob-video-1.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="mob-bottom">
-            <div class="mob-bottom-name">
-              <img src="<?php bloginfo('template_url'); ?>/assets/img/bottom-img.svg" alt="">
-              <p>cHESTER ZODA</p>
-            </div>
-            <div class="mob-bottom-likes">
-              <p>105k</p>
-              <img src="<?php bloginfo('template_url'); ?>/assets/img/acc-icon.svg" alt="">
-            </div>
-          </div>
-        </div> -->
         </div>
     </div>
     <!-- reels ends -->
